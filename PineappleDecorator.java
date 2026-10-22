@@ -1,5 +1,6 @@
 public class PineappleDecorator extends PizzaDecorator {
-    public void PizzaDecorator(Pizza wrapped) {
+    
+    public PineappleDecorator(Pizza wrapped) {
         super(wrapped);
     }
 
@@ -10,7 +11,7 @@ public class PineappleDecorator extends PizzaDecorator {
 
     @Override
     public String getDescription() {
-        return wrapped.getDescription() + " +Pineapple";
+        return wrapped.getDescription() + " + Pineapple";
     }
 
 }

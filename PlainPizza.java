@@ -1,15 +1,18 @@
 public class PlainPizza implements Pizza {
 
-    private double price = 5;
-    private String description = "Plain Dough & Sauce";
+    private final double price;
+    private final String description;
 
-    public void PlainPizza(double price, String description) {
+    public PlainPizza(double price, String description) {
         if (price >= 0) {
             this.price = price;
+        } else {
+            throw new IllegalArgumentException("Price cannot be negative.");
         }
-        if (description != null && description.trim() != "") {
-            this.description = description;
+        if (description == null || description.trim().isEmpty()) {
+            throw new IllegalArgumentException("Description cannot be null or empty.");
         }
+        this.description = description;
     }
 
     @Override

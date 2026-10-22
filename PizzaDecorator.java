@@ -1,9 +1,9 @@
 public abstract class PizzaDecorator implements Pizza {
-    protected Pizza wrapped;
+    protected final Pizza wrapped;
 
-    public void PizzaDecorator(Pizza wrapped){
+    public PizzaDecorator(Pizza wrapped){
         if(wrapped==null){
-            throw new IllegalArgumentException("invalid value!")
+            throw new IllegalArgumentException("invalid value!");
         }
         this.wrapped=wrapped;
     }
